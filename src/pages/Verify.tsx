@@ -98,7 +98,7 @@ export default function Verify() {
   //   }, [email]);
 
   useEffect(() => {
-    if (!email || !confirmed) {
+    // if (!email || !confirmed) {
       return;
     }
 
