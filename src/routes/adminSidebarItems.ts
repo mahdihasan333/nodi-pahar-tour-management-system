@@ -1,6 +1,6 @@
 import AddTour from "@/pages/Admin/AddTour";
 import AddTourType from "@/pages/Admin/AddTourType";
-
+// import Analytics from "@/pages/Admin/Analytics";
 import { ISidebarItem } from "@/types";
 import { lazy } from "react";
 
