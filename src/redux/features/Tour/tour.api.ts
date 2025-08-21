@@ -41,4 +41,4 @@ export const {
   useAddTourTypeMutation,
   useRemoveTourTypeMutation,
   useAddTourMutation,
-} = tourApi;
+// } = tourApi;
