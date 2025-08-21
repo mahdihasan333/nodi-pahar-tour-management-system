@@ -365,7 +365,7 @@ export default function AddTour() {
                           )}
                         </SelectContent>
                       </Select>
-                      {/* <FormMessage /> */}
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
