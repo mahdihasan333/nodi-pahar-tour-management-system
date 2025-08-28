@@ -109,7 +109,7 @@ export default function TourFilters() {
                 )
               )}
             </SelectGroup>
-          
+          </SelectContent>
         </Select>
       </div>
     </div>
