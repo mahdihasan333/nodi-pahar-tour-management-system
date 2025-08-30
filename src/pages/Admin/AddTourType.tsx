@@ -30,7 +30,23 @@ export default function AddTourType() {
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(5);
 
-  
+  const { data } = useGetTourTypesQuery({ page: currentPage, limit });
+  const [removeTourType] = useRemoveTourTypeMutation();
+
+  const handleRemoveTourType = async (tourId: string) => {
+    const toastId = toast.loading("Removing...");
+    try {
+      const res = await removeTourType(tourId).unwrap();
+
+      if (res.success) {
+        toast.success("Removed", { id: toastId });
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const totalPage = data?.meta?.totalPage || 1;
 
   //* Total page 2 => [0, 0]
 
