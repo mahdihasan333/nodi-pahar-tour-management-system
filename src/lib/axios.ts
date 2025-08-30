@@ -67,7 +67,20 @@ axiosInstance.interceptors.response.use(
           .catch((error) => Promise.reject(error));
       }
 
-      
+      isRefreshing = true;
+      try {
+        const res = await axiosInstance.post("/auth/refresh-token");
+        console.log("New Token arrived", res);
+
+        processQueue(null);
+
+        return axiosInstance(originalRequest);
+      } catch (error) {
+        processQueue(error);
+        return Promise.reject(error);
+      } finally {
+        isRefreshing = false;
+      }
     }
 
     //* For Everything
